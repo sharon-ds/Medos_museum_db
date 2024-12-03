@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medos Museum Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0; /* Light tan-yellow background */
+            color: #5a4a3c; /* Dark brownish text */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #e7c27d; /* Tan-yellow header background */
+            color: #5a4a3c;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #5a4a3c;
+            background-color: #e7c27d;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #d4a659;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medos Museum Admin</h1>
+    <div class="nav-container">
+        <a href="artifact.php">View/Update Artifacts</a>
+        <a href="membership.php">Manage Membership Records</a>
+        <a href="tickets.php">Monitor Ticket Sales/Registrations</a>
+        <a href="schedule_programs.php">Schedule Programs/Events</a>
+        <a href="schedule_staff.php">Schedule Staff</a>
+    </div>
+</body>
+</html>
