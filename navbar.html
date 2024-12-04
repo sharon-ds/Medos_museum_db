@@ -33,13 +33,13 @@
     </style>
 </head>
 <body>
-    <div class="navbar" >
-        <a href="index.html" class="active">Home</a>
-        <a href="artifact.php">Artifacts</a>
-        <a href="membership.php">Membership</a>
-        <a href="schedule_programs.php">Schedule Programs</a>
-        <a href="schedule_staff.php">Schedule Staff</a>
-        <a href="tickets.php">Tickets</a>
+    <div class="navbar">
+        <a href="index.html" class="<?= (basename($_SERVER['PHP_SELF']) == 'index.html') ? 'active' : ''; ?>">Home</a>
+        <a href="artifact.php" class="<?= (basename($_SERVER['PHP_SELF']) == 'artifact.php') ? 'active' : ''; ?>">Artifacts</a>
+        <a href="membership.php" class="<?= (basename($_SERVER['PHP_SELF']) == 'membership.php') ? 'active' : ''; ?>">Membership</a>
+        <a href="schedule_programs.php" class="<?= (basename($_SERVER['PHP_SELF']) == 'schedule_programs.php') ? 'active' : ''; ?>">Schedule Programs</a>
+        <a href="schedule_staff.php" class="<?= (basename($_SERVER['PHP_SELF']) == 'schedule_staff.php') ? 'active' : ''; ?>">Schedule Staff</a>
+        <a href="tickets.php" class="<?= (basename($_SERVER['PHP_SELF']) == 'tickets.php') ? 'active' : ''; ?>">Tickets</a>
     </div>
 </body>
 </html>
