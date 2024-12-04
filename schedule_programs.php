@@ -34,7 +34,6 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Programs</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     <h1>Schedule Programs/Events</h1>
@@ -57,15 +56,18 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 
-    <h2>Add New Program/Event</h2>
-    <form method="POST">
-        <label for="event_Title">Event Title:</label>
-        <input type="text" id="event_Title" name="event_Title" required>
-        <label for="Date">Date:</label>
-        <input type="date" id="Date" name="Date" required>
-        <button type="submit" name="add">Add Event</button>
-    </form>
+    <div id="addFormContainer" class="form-container">
+        <h2>Add New Program/Event</h2>
+        <form method="POST">
+            <label for="event_Title">Event Title:</label>
+            <input type="text" id="event_Title" name="event_Title" required>
+            <label for="Date">Date:</label>
+            <input type="date" id="Date" name="Date" required>
+            <button type="submit" name="add">Add Event</button>
+        </form>
+    </div>
 
     <?php $conn->close(); ?>
 </body>
 </html>
+

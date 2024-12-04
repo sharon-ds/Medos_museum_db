@@ -45,7 +45,6 @@ $tickets_result = $conn->query($tickets_sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tickets Management</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     <h1>Tickets Management</h1>
@@ -67,6 +66,7 @@ $tickets_result = $conn->query($tickets_sql);
         </tbody>
     </table>
 
+    <div id="buyFormContainer" class="form-container">
     <h2>Buy Ticket</h2>
     <form method="POST">
         <label for="visitor_ID">Select Visitor:</label>
@@ -85,6 +85,7 @@ $tickets_result = $conn->query($tickets_sql);
 
         <button type="submit" name="buy_ticket">Buy Ticket</button>
     </form>
+    </div>
 
     <?php $conn->close(); ?>
 </body>

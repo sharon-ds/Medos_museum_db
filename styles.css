@@ -17,6 +17,11 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    padding-left: 10px;
+}
+
+
 table {
     border-collapse: collapse;
     width: 90%;
@@ -49,6 +54,7 @@ td {
     width: 80%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 label {
     display: block;
@@ -84,4 +90,16 @@ button:hover {
 
 .center {
     text-align: center;
+}
+
+select {
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px;
+    font-size: 1rem; 
+    color: #5a4a3c; 
+    background-color: white;
+    border: 1px solid #e0c385; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }

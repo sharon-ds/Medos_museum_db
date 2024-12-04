@@ -75,19 +75,20 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 
+    <div id="visitorFormContainer" class="form-container">
     <h2>Add New Visitor</h2>
-    <form method="POST">
-        <label for="visitor_Name">Name:</label>
-        <input type="text" id="visitor_Name" name="visitor_Name" required>
-        
-        <label for="visitor_ID">Visitor ID:</label>
-        <input type="text" id="visitor_ID" name="visitor_ID" required>
-        
-        <label for="v_Contact_info">Contact Info:</label>
-        <input type="text" id="v_Contact_info" name="v_Contact_info" required>
-        <button type="submit" name="add">Add Visitor</button>
-    </form>
-
+        <form method="POST">
+            <label for="visitor_Name">Name:</label>
+            <input type="text" id="visitor_Name" name="visitor_Name" required>
+            
+            <label for="visitor_ID">Visitor ID:</label>
+            <input type="text" id="visitor_ID" name="visitor_ID" required>
+            
+            <label for="v_Contact_info">Contact Info:</label>
+            <input type="text" id="v_Contact_info" name="v_Contact_info" required>
+            <button type="submit" name="add">Add Visitor</button>
+        </form>
+    </div>
     <?php $conn->close(); ?>
 </body>
 </html>

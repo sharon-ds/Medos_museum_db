@@ -49,6 +49,7 @@ $assignment_result = $conn->query($assignment_sql);
 </head>
 <body>
     <h1>Schedule Staff for Events</h1>
+    
     <h2>Current Assignments</h2>
     <table>
         <thead>
@@ -66,25 +67,27 @@ $assignment_result = $conn->query($assignment_sql);
             <?php endwhile; ?>
         </tbody>
     </table>
-
+    
+    <div id="assignFormContainer" class="form-container">
     <h2>Assign Staff to Event</h2>
-    <form method="POST">
-        <label for="staff_ID">Select Staff:</label>
-        <select name="staff_ID" id="staff_ID" required>
-            <?php while ($row = $staff_result->fetch_assoc()): ?>
-                <option value="<?= $row['staff_ID'] ?>"><?= htmlspecialchars($row['staff_Name']) ?></option>
-            <?php endwhile; ?>
-        </select>
+        <form method="POST">
+            <label for="staff_ID">Select Staff:</label>
+            <select name="staff_ID" id="staff_ID" required>
+                <?php while ($row = $staff_result->fetch_assoc()): ?>
+                    <option value="<?= $row['staff_ID'] ?>"><?= htmlspecialchars($row['staff_Name']) ?></option>
+                <?php endwhile; ?>
+            </select>
 
-        <label for="event_ID">Select Event:</label>
-        <select name="event_ID" id="event_ID" required>
-            <?php while ($row = $event_result->fetch_assoc()): ?>
-                <option value="<?= $row['event_ID'] ?>"><?= htmlspecialchars($row['event_Title']) ?></option>
-            <?php endwhile; ?>
-        </select>
+            <label for="event_ID">Select Event:</label>
+            <select name="event_ID" id="event_ID" required>
+                <?php while ($row = $event_result->fetch_assoc()): ?>
+                    <option value="<?= $row['event_ID'] ?>"><?= htmlspecialchars($row['event_Title']) ?></option>
+                <?php endwhile; ?>
+            </select>
 
-        <button type="submit" name="assign">Assign Staff</button>
-    </form>
+            <button type="submit" name="assign">Assign Staff</button>
+        </form>
+    </div>
 
     <?php $conn->close(); ?>
 </body>
