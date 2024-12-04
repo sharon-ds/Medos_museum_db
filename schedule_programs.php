@@ -1,3 +1,5 @@
+<?php include('navbar.html'); ?>
+
 <?php
 // Database connection
 $servername = "localhost";

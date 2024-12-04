@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic styling for the navigation bar */
+        .navbar {
+            background-color: #e7c27d; /* light-tan background */
+            overflow: hidden; /* Clear floats */
+            border: 2px solid #000000; /* Adding a border around the navbar */
+            
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2; /* Light text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; /* Light background on hover */
+            color: black; /* Dark text on hover */
+        }
+
+        .navbar a.active {
+            background-color: #000000; /* Active tab highlight */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" >
+        <a href="index.html" class="active">Home</a>
+        <a href="artifact.php">Artifacts</a>
+        <a href="membership.php">Membership</a>
+        <a href="schedule_programs.php">Schedule Programs</a>
+        <a href="schedule_staff.php">Schedule Staff</a>
+        <a href="tickets.php">Tickets</a>
+    </div>
+</body>
+</html>
