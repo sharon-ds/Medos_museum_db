@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2024 at 05:23 AM
+-- Generation Time: Dec 05, 2024 at 03:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -110,7 +110,7 @@ INSERT INTO `displays` (`artifact_ID`, `exhibit_ID`) VALUES
 
 CREATE TABLE `event` (
   `event_ID` int(5) NOT NULL,
-  `event_Title` varchar(20) NOT NULL,
+  `event_Title` varchar(40) NOT NULL,
   `Date` datetime(6) NOT NULL,
   `staff_ID` int(5) NOT NULL,
   `room_num` varchar(10) NOT NULL
@@ -121,7 +121,9 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`event_ID`, `event_Title`, `Date`, `staff_ID`, `room_num`) VALUES
-(1, 'Opening Night - Cats', '2024-12-05 18:00:00.000000', 11111, '300A');
+(1, 'Opening Night - Cats', '2024-12-05 18:00:00.000000', 11111, '300A'),
+(2, 'Medieval Cats and Seminar', '2024-12-06 15:00:00.000000', 42036, '210B'),
+(3, 'Big Cats of the Wild', '2024-12-09 10:00:00.000000', 42034, '150C');
 
 -- --------------------------------------------------------
 
