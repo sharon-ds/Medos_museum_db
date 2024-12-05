@@ -35,7 +35,7 @@ db
 * Clone the repository
 * Set up the database, importing medosmuseum into myPHPAdmin
 * Configure the database connection:
-        Edit the db/connection.php file with your database credentials:
+        Edit the connection with your database credentials:
 
             $servername = "localhost";
 
