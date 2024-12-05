@@ -1,5 +1,4 @@
 <?php include('navbar.html'); ?>
-
 <?php
 // Database connection
 $servername = "localhost";
@@ -17,9 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
     $event_Title = $_POST['event_Title'];
     $Date = $_POST['Date'];
 
-    $sql = "INSERT INTO event (event_Title, Date) VALUES (?, ?)";
+    // Calculate new event ID
+    $sql = "SELECT MAX(event_ID) AS max_id FROM event";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $new_event_ID = $row['max_id'] + 1;
+
+    // Insert the new event WITH id
+    $sql = "INSERT INTO event (event_ID, event_Title, Date) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $event_Title, $Date);
+    $stmt->bind_param("iss", $new_event_ID, $event_Title, $Date);
     $stmt->execute();
     $stmt->close();
 }
@@ -44,7 +50,7 @@ $result = $conn->query($sql);
             <tr>
                 <th>Event ID</th>
                 <th>Title</th>
-                <th>Date</th>
+                <th>Date and Time</th>
             </tr>
         </thead>
         <tbody>
@@ -63,8 +69,8 @@ $result = $conn->query($sql);
         <form method="POST">
             <label for="event_Title">Event Title:</label>
             <input type="text" id="event_Title" name="event_Title" required>
-            <label for="Date">Date:</label>
-            <input type="date" id="Date" name="Date" required>
+            <label for="Date">Date and Time:</label>
+            <input type="datetime-local" id="Date" name="Date" required>
             <button type="submit" name="add">Add Event</button>
         </form>
     </div>
