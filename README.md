@@ -16,19 +16,19 @@ Clean navigation for easy access to functionality. Toggleable forms for quick da
 index.html                  # Landing page
 
 admin
-* artifact.php            # Manage artifacts 
-* membership.php          # Manage visitors 
-* schedule_programs.php   # Manage events
-* schedule_staff.php      # Manage staff assignments
-* tickets.php             # Process ticket purchases
+* artifact.php              # Manage artifacts 
+* membership.php            # Manage visitors 
+* schedule_programs.php     # Manage events
+* schedule_staff.php        # Manage staff assignments
+* tickets.php               # Process ticket purchases
 
 other assets
 
-* navbar.html             # Style for navigation bar
-* styles.css              # Shared CSS file for styling
+* navbar.html               # Style for navigation bar
+* styles.css                # Shared CSS file for styling
 
 db
-* medosmuseum.sql         # SQL script for database 
+* medosmuseum.sql           # SQL script for database 
 
 
 ## Setup Instructions
