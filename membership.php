@@ -1,5 +1,4 @@
 <?php include('navbar.html'); ?>
-
 <?php
 // Database connection
 $servername = "localhost";
@@ -17,9 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
     $visitor_Name = $_POST['visitor_Name'];
     $v_Contact_info = $_POST['v_Contact_info'];
 
-    $sql = "INSERT INTO visitor (visitor_Name, v_Contact_info) VALUES (?, ?)";
+    // Calculate new visitor ID
+    $sql = "SELECT MAX(visitor_ID) AS max_id FROM visitor";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $new_visitor_ID = $row['max_id'] + 1;
+
+    $sql = "INSERT INTO visitor (visitor_ID, visitor_Name, v_Contact_info) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $visitor_Name, $v_Contact_info);
+    $stmt->bind_param("iss", $new_visitor_ID, $visitor_Name, $v_Contact_info);
     $stmt->execute();
     $stmt->close();
 }
@@ -82,9 +87,6 @@ $result = $conn->query($sql);
         <form method="POST">
             <label for="visitor_Name">Name:</label>
             <input type="text" id="visitor_Name" name="visitor_Name" required>
-            
-            <label for="visitor_ID">Visitor ID:</label>
-            <input type="text" id="visitor_ID" name="visitor_ID" required>
             
             <label for="v_Contact_info">Contact Info:</label>
             <input type="text" id="v_Contact_info" name="v_Contact_info" required>
