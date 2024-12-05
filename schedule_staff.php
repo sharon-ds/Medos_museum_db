@@ -22,6 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['assign'])) {
     $stmt->bind_param("ii", $staff_ID, $event_ID);
     $stmt->execute();
     $stmt->close();
+
+    // Update the event table with the assigned staff ID
+    $update_sql = "UPDATE event SET staff_ID = ? WHERE event_ID = ?";
+    $update_stmt = $conn->prepare($update_sql);
+    $update_stmt->bind_param("ii", $staff_ID, $event_ID);
+    $update_stmt->execute();
+    $update_stmt->close();
 }
 
 // Fetch all staff
