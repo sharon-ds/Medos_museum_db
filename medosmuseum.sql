@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2024 at 03:24 AM
+-- Generation Time: Dec 05, 2024 at 04:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -74,7 +74,8 @@ INSERT INTO `attends` (`visitor_ID`, `event_ID`) VALUES
 (6543, 1),
 (1245, 1),
 (915, 1),
-(122, 1);
+(122, 1),
+(6543, 2);
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,8 @@ CREATE TABLE `event` (
 INSERT INTO `event` (`event_ID`, `event_Title`, `Date`, `staff_ID`, `room_num`) VALUES
 (1, 'Opening Night - Cats', '2024-12-05 18:00:00.000000', 11111, '300A'),
 (2, 'Medieval Cats and Seminar', '2024-12-06 15:00:00.000000', 42036, '210B'),
-(3, 'Big Cats of the Wild', '2024-12-09 10:00:00.000000', 42034, '150C');
+(3, 'Big Cats of the Wild', '2024-12-09 10:00:00.000000', 42034, '150C'),
+(4, 'Cat-like Creatures of the Wind and Sea', '2024-12-12 17:00:00.000000', 0, '110A');
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,8 @@ CREATE TABLE `hosts` (
 --
 
 INSERT INTO `hosts` (`staff_ID`, `event_ID`) VALUES
-(11111, 1);
+(11111, 1),
+(42034, 4);
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,8 @@ INSERT INTO `visitor` (`visitor_ID`, `visitor_Name`, `v_Contact_Info`) VALUES
 (6543, 'Sharon Love', '923-134-5342'),
 (1245, 'Sierra Nicole', '346-271-3745'),
 (915, 'Jason Lee', '242-326-6423'),
-(122, 'Catherine Louise', '423-124-7662');
+(122, 'Catherine Louise', '423-124-7662'),
+(6544, 'Eric Davis', '312-214-2435');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
